@@ -1,0 +1,122 @@
+@import './px2rem.scss';
+$designWidth : 375;
+
+body{
+  width: 16rem;
+  margin: 0 auto;
+}
+
+.top-cont{
+  min-height: 100%;
+  // 巨幕
+  .jumbotron{
+    height: px2rem(160);
+    background-color: #363d43;
+    position: relative;
+    .coin{
+      width: px2rem(99);
+      height: px2rem(145);
+      position: absolute;
+      top: 0;
+      right: px2rem(48);
+      background: url(../img/badge-rights-bg.png) scroll no-repeat center top;
+      background-size: contain;
+    }
+    .tit{
+      font-size:px2rem(27);
+      padding-top: px2rem(58);
+      color:#ffffff;
+      text-indent: px2rem(20);
+      line-height: 1;
+    }
+    .tip{
+      font-size:px2rem(14);
+      color:#ffffff;
+      text-indent: px2rem(20);
+      margin-top: px2rem(10);
+      line-height: 1;
+    }
+  }
+
+  // 权益名称
+  .name-box{
+    border-bottom:1px solid #d7d7d7;
+    margin-left: px2rem(20);
+    padding-top: px2rem(28);
+    padding-bottom: px2rem(20);
+    .tit{
+      font-size: 0;
+      line-height: 1;
+      .icon{
+        display: inline-block;
+        vertical-align: middle;
+        width: px2rem(16);
+        height: px2rem(16);
+        background: url(../img/rights-name-gray@2x.png) scroll no-repeat center;
+        background-size: contain;
+        opacity: 0.8;
+      }
+      .txt{
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: px2rem(8);
+        height: px2rem(16);
+        line-height: px2rem(16);
+        font-size:px2rem(16);
+        color:#2b333b;
+      }
+    }
+    .name{
+      font-size:px2rem(13);
+      color:#848689;
+      margin-top: px2rem(10);
+      line-height: 1;
+      margin-left: px2rem(24);
+      margin-right: px2rem(18);
+      max-height: 100%;
+    }
+  }
+
+  // 权益介绍
+  .introduce-box{
+    border-bottom:1px solid #d7d7d7;
+    margin-left: px2rem(20);
+    padding-top: px2rem(28);
+    padding-bottom: px2rem(20);
+    .tit{
+      font-size: 0;
+      line-height: 1;
+      .icon{
+        display: inline-block;
+        vertical-align: middle;
+        width: px2rem(16);
+        height: px2rem(16);
+        background: url(../img/rights-introduce-gray@2x.png) scroll no-repeat center;
+        background-size: contain;
+        opacity: 0.8;
+      }
+      .txt{
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: px2rem(8);
+        height: px2rem(16);
+        line-height: px2rem(16);
+        font-size:px2rem(16);
+        color:#2b333b;
+      }
+    }
+    .introduce{
+      font-size:px2rem(13);
+      color:#848689;
+      margin-top: px2rem(10);
+      line-height: normal;
+      margin-left: px2rem(24);
+      text-align:justify;
+      margin-right: px2rem(18);
+      max-height: 100%;
+    }
+  }
+  .layer{
+    height: px2rem(60);
+  }
+}

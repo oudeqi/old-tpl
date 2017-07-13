@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+  <!-- <meta name="hotcss" content="initial-dpr=1"> -->
+  <!-- <meta name="hotcss" content="max-width=540"> -->
+  <!-- <meta name="hotcss" content="design-width=750"> -->
+	<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+	<title>专属任务</title>
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/task-rights-vip.css">
+	<script src="./js/hotcss.js"></script>
+</head>
+<body>
+  <div class="top-cont">
+    <!-- 巨幕 -->
+    <div class="jumbotron">
+      <div class="coin"></div>
+      <h1 class="tit">专属任务</h1>
+      <p class="tip">只属于VIP会员的专属任务</p>
+    </div>
+
+    <!-- 权益名称 -->
+    <div class="name-box">
+      <div class="tit">
+        <i class="icon"></i><h2 class="txt">权益名称</h2>
+      </div>
+      <div class="name">专属任务</div>
+    </div>
+
+    <div class="introduce-box">
+      <div class="tit">
+        <i class="icon"></i>
+        <h2 class="txt">权益介绍</h2>
+      </div>
+      <div class="introduce">任务模块不断升级完善中，平台任务每期数量有限，更多特权任务仅限VIP会员专属，成为VIP更多高价格任务任你挑选</div>
+    </div>
+		<div class="bott-btn-layer"></div>
+
+  </div>
+  <div class="bott-btn" id="btn">去做任务</div>
+	<script type="text/javascript">
+		document.getElementById('btn').onclick = function(){
+			h5.go("0200");
+		}
+	</script>
+</body>
+</html>

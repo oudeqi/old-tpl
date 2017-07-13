@@ -1,0 +1,44 @@
+#protocol{
+	font-size: 13px;
+	text-align: justify;
+}
+#protocol .container{
+	padding: 0 0.9375em;
+}
+#protocol .container .tit{
+	text-align: center;
+	font-size: 1.375em;
+	color: #333;
+}
+#protocol .container .subtit{
+	text-align: left;
+	font-size: 1em;
+	color: #333;
+	padding: 0.9375em 0;
+}
+#protocol .container .summarize{
+	padding: 1em 0;
+	color: #686868;
+}
+#protocol .container .p{
+	font-size: 1em;
+	padding-bottom: 0.5em;
+	color: #686868;
+	text-align: justify;
+}
+#protocol .container .t-indent{
+	text-indent: 1.5em;
+	font-size: 1em;
+	padding-bottom: 0.5em;
+	color: #686868;
+}
+@media screen and (min-width:360px){
+	#protocol{
+		font-size: 15px;
+	}
+}
+@media screen and (min-width:375px){
+	#protocol{
+		font-size: 16px;
+	}
+}

@@ -1,0 +1,591 @@
+body {
+  width: 16rem;
+  margin: 0 auto;
+}
+
+.container {
+  background-color: #32adf3;
+}
+
+.incentive-rules {
+  background: url(../img/incentive-bg.png) scroll no-repeat center;
+  background-size: 100% auto;
+  width: 16rem;
+  height: 25.728rem;
+  position: relative;
+}
+
+.incentive-rules .happy-summer {
+  background: url(../img/happy-summer.png) scroll no-repeat center;
+  background-size: 100% auto;
+  width: 6.95467rem;
+  height: 1.19467rem;
+  margin: 0 auto;
+  position: relative;
+  top: 1.28rem;
+  z-index: 3;
+}
+
+.incentive-rules .tit {
+  margin: 0 auto;
+  position: relative;
+  top: 2.38933rem;
+  width: 12.58667rem;
+  height: 6.31467rem;
+  z-index: 3;
+}
+
+.incentive-rules .tit img {
+  width: 100%;
+  height: auto;
+}
+
+.incentive-rules .rp {
+  background: url(../img/incentive-rp.png) scroll no-repeat center;
+  background-size: 100% auto;
+  margin: 0 auto;
+  position: relative;
+  top: 3.79733rem;
+  width: 12.20267rem;
+  height: 8.61867rem;
+  z-index: 3;
+}
+
+.incentive-rules .bott-bg {
+  background: url(../img/incentive-bg-bott.png) scroll no-repeat center;
+  background-size: 100% auto;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 9.088rem;
+  z-index: 2;
+}
+
+.incentive-rules .invitation-btn {
+  background: url(../img/invitation-btn-bg.png) scroll no-repeat center;
+  background-size: contain;
+  border-radius: 4.26667rem;
+  width: 12.8rem;
+  height: 1.96267rem;
+  line-height: 1.96267rem;
+  text-align: center;
+  font-size: 0.85333rem;
+  color: #fff;
+  margin: 0 auto;
+  position: relative;
+  top: 5.07733rem;
+  z-index: 3;
+}
+
+.incentive-rules .tip {
+  font-size: 0.59733rem;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 5.67467rem;
+  z-index: 3;
+}
+
+.activity-rules {
+  padding-top: 1.664rem;
+}
+
+.activity-rules .tit {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1.36533rem;
+  width: 4.26667rem;
+  height: 0.98133rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.activity-rules .tit .txt {
+  font-size: 0.59733rem;
+  color: #fff;
+  display: inline-block;
+  margin-right: 0.21333rem;
+}
+
+.activity-rules .tit .arrow {
+  width: 0.42667rem;
+  height: 0.21333rem;
+  background: url(../img/arrow@2x.png) scroll no-repeat center;
+  background-size: 100% auto;
+}
+
+.activity-rules .subtit {
+  text-align: center;
+  margin-top: 1.19467rem;
+  margin-bottom: 0.85333rem;
+  font-size: 0;
+}
+
+.activity-rules .subtit span {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1.36533rem;
+  height: 1.06667rem;
+  line-height: 1.06667rem;
+  font-size: 0.59733rem;
+  color: #fff;
+  display: inline-block;
+  padding: 0 0.59733rem;
+  margin: 0;
+}
+
+.activity-rules .subtit-2 {
+  text-align: center;
+  font-size: 0.59733rem;
+  color: #fff;
+  margin-top: 0.256rem;
+  margin-bottom: 0.256rem;
+  line-height: 1;
+}
+
+.activity-rules .tip {
+  font-size: 0.59733rem;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 0.85333rem;
+  max-height: 100%;
+}
+
+.activity-rules .relation-pic-vip, .activity-rules .relation-pic-bill {
+  border-radius: 0.42667rem;
+  width: 11.86133rem;
+  height: 8.74667rem;
+  padding: 1.024rem 1.19467rem 1.10933rem 1.19467rem;
+  margin: 0 auto;
+  margin-top: 0.768rem;
+  margin-bottom: 0.64rem;
+}
+
+.activity-rules .relation-pic-vip img, .activity-rules .relation-pic-bill img {
+  width: 100%;
+  height: auto;
+}
+
+.activity-rules .incentive-level-vip, .activity-rules .incentive-level-bill {
+  border-radius: 0.42667rem;
+  width: 14.208rem;
+  padding: 0.42667rem 0;
+  margin: 0 auto;
+  margin-top: 0.64rem;
+  font-size: 0.59733rem;
+  color: #fff;
+  max-height: 100%;
+}
+
+.activity-rules .relation-pic-vip {
+  background: #e56062;
+}
+
+.activity-rules .incentive-level-vip {
+  background: #e56062;
+}
+
+.activity-rules .incentive-level-vip p {
+  padding: 0 1.28rem;
+}
+
+.activity-rules .relation-pic-bill {
+  background: #a1c33c;
+}
+
+.activity-rules .incentive-level-bill {
+  background: #a1c33c;
+}
+
+.activity-rules .incentive-level-bill p {
+  padding: 0 0.68267rem;
+}
+
+.activity-rules .money {
+  background: #e56062;
+  border-radius: 0.42667rem;
+  width: 14.208rem;
+  height: 3.41333rem;
+  line-height: 3.41333rem;
+  color: #fff;
+  font-size: 1.536rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 0.46933rem;
+  font-weight: bold;
+}
+
+.activity-rules .formula {
+  font-size: 0.42667rem;
+  color: #ffffff;
+  text-align: center;
+  max-height: 100%;
+  margin-top: 0.42667rem;
+}
+
+.activity-rules .tip-pic {
+  width: 14.08rem;
+  margin: 0 auto;
+  margin-top: 1.49333rem;
+  height: auto;
+}
+
+.activity-rules .tip-pic img {
+  width: 100%;
+  height: auto;
+}
+
+.activity-rules .tip2 {
+  font-size: 0.55467rem;
+  line-height: 1.51;
+  color: #fff;
+  text-align: center;
+  margin: 0 0.85333rem;
+  padding-top: 1.49333rem;
+  height: 2.688rem;
+}
+
+.vip-privilege {
+  padding-top: 2.13333rem;
+}
+
+.vip-privilege .tit {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1.36533rem;
+  width: 5.54667rem;
+  height: 0.98133rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.vip-privilege .tit .txt {
+  font-size: 0.59733rem;
+  color: #fff;
+  display: inline-block;
+  margin-right: 0.21333rem;
+}
+
+.vip-privilege .tit .arrow {
+  width: 0.42667rem;
+  height: 0.21333rem;
+  background: url(../img/arrow@2x.png) scroll no-repeat center;
+  background-size: 100% auto;
+}
+
+.vip-privilege .privilege-list {
+  padding: 0 0.85333rem;
+}
+
+.vip-privilege .privilege-list:after {
+  content: "";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+
+.vip-privilege .privilege-list .item {
+  float: left;
+  width: 25%;
+}
+
+.vip-privilege .privilege-list .item .invitation-award, .vip-privilege .privilege-list .item .score, .vip-privilege .privilege-list .item .treasure, .vip-privilege .privilege-list .item .badge, .vip-privilege .privilege-list .item .bill, .vip-privilege .privilege-list .item .cashing, .vip-privilege .privilege-list .item .rp, .vip-privilege .privilege-list .item .specialdeals, .vip-privilege .privilege-list .item .task, .vip-privilege .privilege-list .item .invitation {
+  display: block;
+  width: 1.49333rem;
+  height: 1.49333rem;
+  margin: 0 auto;
+  margin-top: 1.36533rem;
+}
+
+.vip-privilege .privilege-list .item .invitation-award {
+  background: url(../img/privilege-invitation-award.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-list .item .score {
+  background: url(../img/privilege-score.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-list .item .treasure {
+  background: url(../img/privilege-treasure.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-list .item .badge {
+  background: url(../img/privilege-badge.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-list .item .bill {
+  background: url(../img/privilege-bill.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-list .item .cashing {
+  background: url(../img/privilege-cashing.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-list .item .rp {
+  background: url(../img/privilege-rp.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-list .item .specialdeals {
+  background: url(../img/privilege-specialdeals.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-list .item .task {
+  background: url(../img/privilege-task.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-list .item .invitation {
+  background: url(../img/privilege-invitation.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-list .item span {
+  font-size: 0.59733rem;
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin-top: 0.68267rem;
+}
+
+.vip-privilege .privilege-compare {
+  padding: 0 0.59733rem;
+}
+
+.vip-privilege .privilege-compare .item {
+  padding-top: 1.70667rem;
+}
+
+.vip-privilege .privilege-compare .item .subtit {
+  font-size: 0.768rem;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.vip-privilege .privilege-compare .item .compare {
+  margin-top: 0.85333rem;
+  background: #fff;
+  position: relative;
+}
+
+.vip-privilege .privilege-compare .item .compare .top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: #fd9e24;
+}
+
+.vip-privilege .privilege-compare .item .compare .top .t_t {
+  font-size: 0.768rem;
+  color: #fff;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  line-height: 1.664rem;
+}
+
+.vip-privilege .privilege-compare .item .compare .bott {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.vip-privilege .privilege-compare .item .compare .bott .content {
+  width: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.vip-privilege .privilege-compare .item .compare .bott .content .ic {
+  width: 1.28rem;
+  height: 1.28rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1.28rem;
+}
+
+.vip-privilege .privilege-compare .item .compare .bott .content .desc {
+  padding-top: 0.85333rem;
+  padding-bottom: 1.70667rem;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.vip-privilege .privilege-compare .item .compare .bott .content .desc p {
+  font-size: 0.512rem;
+  color: #686868;
+  line-height: 1.5;
+}
+
+.vip-privilege .privilege-compare .item .compare .bott .line {
+  width: 1px;
+  border-left: 1px dashed #fd9e24;
+}
+
+.vip-privilege .privilege-compare .item .compare .pk {
+  width: 2.56rem;
+  height: 2.56rem;
+  background: url(../img/pk.png) scroll no-repeat center;
+  background-size: contain;
+  position: absolute;
+  top: 0.34133rem;
+  left: 50%;
+  margin-left: -1.28rem;
+}
+
+.vip-privilege .privilege-compare .treasure .ic {
+  background: url(../img/compare-treasure.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .treasure .vip {
+  background: url(../img/compare-treasure-vip.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .bill .ic {
+  background: url(../img/compare-bill.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .bill .vip {
+  background: url(../img/compare-bill-vip.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .cashing .ic {
+  background: url(../img/compare-cashing.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .cashing .vip {
+  background: url(../img/compare-cashing-vip.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .rp .ic {
+  background: url(../img/compare-rp.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .rp .vip {
+  background: url(../img/compare-rp-vip.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .task .ic {
+  background: url(../img/compare-task.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .task .vip {
+  background: url(../img/compare-task-vip.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .specialdeals .ic {
+  background: url(../img/compare-specialdeals.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .specialdeals .vip {
+  background: url(../img/compare-specialdeals-vip.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .invitation-award .ic {
+  background: url(../img/compare-award.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .privilege-compare .invitation-award .vip {
+  background: url(../img/compare-award-vip.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.vip-privilege .tip {
+  margin: 0 2.13333rem;
+  text-align: center;
+  font-size: 0.512rem;
+  line-height: 1.5;
+  color: #ffffff;
+  padding: 1.70667rem 0;
+  max-height: 100%;
+}
+
+/*# sourceMappingURL=incentive-rules.css.map */

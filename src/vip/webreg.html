@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+        <title>注册2台</title>
+        <link rel="stylesheet" href="./css/base.css">
+        <link rel="stylesheet" href="./css/webreg.css">
+        <script src="./js/hotcss.js"></script>
+        <script src="./js/angular.min.js"></script>
+    </head>
+    <body ng-app="app" ng-controller="toReg">
+        <script type="text/javascript">
+            /*
+			var appid= "wx6516c9ac78a724b4";
+			var wx_href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+appid+"&redirect_uri=http%3a%2f%2fbat.uoolle.com%2fYOULE%2fv1%2fthirtypart%2fweixin&response_type=code&scope=snsapi_base";
+			wx_href += "&state="+localStorage.getItem("uid")+"#wechat_redirect";
+			/v1/weixin/user/register
+			 */
+            var app = angular.module('app', []);
+            app.constant('constant', {
+                host: 'https://api.uoolle.com/',
+                appid: 'wx6516c9ac78a724b4',
+                redirect_uri: 'https://api.uoolle.com/v1/weixin/user/register'
+            });
+            app.config([
+                '$locationProvider',
+                function($locationProvider) {
+                    $locationProvider.html5Mode({enabled: true, requireBase: false});
+                }
+            ]);
+            app.controller('toReg', [
+                '$scope',
+                'constant',
+                '$location',
+                function($scope, constant, $location) {
+
+                    if ($location.search().code) {
+                        $scope.comeinCode = $location.search().code;
+                    } else {
+                        $scope.comeinCode = "";
+                    }
+					//  console.log("https://open.weixin.qq.com/connect/oauth2/authorize?appid="+constant.appid+"&redirect_uri="+encodeURIComponent(constant.redirect_uri)+"&response_type=code&scope=snsapi_base&state="+$scope.comeinCode+"#wechat_redirect");
+                    $scope.isWeiXin = function() {
+                        var ua = window.navigator.userAgent.toLowerCase();
+						return ua.match(/MicroMessenger/i) == 'micromessenger';
+                    }
+					if($scope.isWeiXin()){
+						window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + constant.appid + "&redirect_uri=" +
+						encodeURIComponent(constant.redirect_uri) + "&response_type=code&scope=snsapi_base&state=" + $scope.comeinCode + "#wechat_redirect";
+					}else{
+						window.location.href = "./webreg-2.html?comeinCode="+$scope.comeinCode;
+					}
+
+
+                }
+            ]);
+        </script>
+    </body>
+</html>

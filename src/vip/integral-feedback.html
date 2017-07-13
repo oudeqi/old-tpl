@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+  <!-- <meta name="hotcss" content="initial-dpr=1"> -->
+  <!-- <meta name="hotcss" content="max-width=540"> -->
+  <!-- <meta name="hotcss" content="design-width=750"> -->
+	<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+	<title>积分回馈</title>
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/integral-feedback.css">
+	<script src="./js/hotcss.js"></script>
+</head>
+<body>
+  <div class="top-cont">
+    <!-- 巨幕 -->
+    <div class="jumbotron">
+      <div class="coin"></div>
+      <h1 class="tit">积分回馈</h1>
+      <p class="tip">积分越高，权益越多</p>
+    </div>
+
+    <!-- 权益名称 -->
+    <div class="name-box">
+      <div class="tit">
+        <i class="icon"></i><h2 class="txt">权益名称</h2>
+      </div>
+      <div class="name">积分回馈</div>
+    </div>
+
+    <div class="introduce-box">
+      <div class="tit">
+        <i class="icon"></i>
+        <h2 class="txt">权益介绍</h2>
+      </div>
+      <div class="introduce">
+				用户在使用有读过程中，可通过分享自己感兴趣的文章或好物来获得相应的积分，同时用户每日登录及保持足够的活跃度等也可获得积分增加，积分将直接影响每个人的接单分享任务金额，同样的接单分享任务，积分越高，所得到的奖励佣金也会越高。
+			</div>
+    </div>
+
+		<div class="bott-btn-layer"></div>
+
+  </div>
+  <div class="bott-btn" id="btn">阅读文章</div>
+	<script type="text/javascript">
+		document.getElementById('btn').onclick = function(){
+			h5.go("0100");
+		}
+	</script>
+</body>
+</html>

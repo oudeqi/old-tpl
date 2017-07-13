@@ -1,0 +1,481 @@
+@import './px2rem.scss';
+$designWidth : 375;
+
+body{
+  width: 16rem;
+  margin: 0 auto;
+}
+.container{
+    background-color: #32adf3;
+}
+//奖励规则
+.incentive-rules{
+  background:url(../img/incentive-bg.png) scroll no-repeat center;
+  background-size: 100% auto;
+  width:px2rem(375);
+  height:px2rem(603);
+  position: relative;
+
+  .happy-summer{
+    background: url(../img/happy-summer.png) scroll no-repeat center;
+    background-size: 100% auto;
+    width: px2rem(163);
+    height: px2rem(28);
+    margin: 0 auto;
+    position: relative;
+    top: px2rem(30);
+    z-index: 3;
+  }
+  .tit{
+    margin: 0 auto;
+    position: relative;
+    top: px2rem(30+26);
+    width: px2rem(295);
+    height: px2rem(50+8+48+8+34);
+    z-index: 3;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  .rp{
+    background:url(../img/incentive-rp.png) scroll no-repeat center;
+    background-size: 100% auto;
+    margin: 0 auto;
+    position: relative;
+    top: px2rem(30+26+33);
+    width: px2rem(572/2);
+    height: px2rem(404/2);
+    z-index: 3;
+  }
+  .bott-bg{
+    background:url(../img/incentive-bg-bott.png) scroll no-repeat center;
+    background-size: 100% auto;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: px2rem(213);
+    z-index: 2;
+  }
+  .invitation-btn{
+    background:url(../img/invitation-btn-bg.png) scroll no-repeat center;
+    background-size: contain;
+    border-radius:px2rem(100);
+    width:px2rem(300);
+    height:px2rem(46);
+    line-height:px2rem(46);
+    text-align: center;
+    font-size:px2rem(20);
+    color:#fff;
+    margin: 0 auto;
+    position: relative;
+    top: px2rem(30+26+33+30);
+    z-index: 3;
+  }
+  .tip{
+    font-size:px2rem(14);
+    color:#fff;
+    text-align:center;
+    position: relative;
+    top: px2rem(30+26+33+30+14);
+    z-index: 3;
+  }
+}
+
+// 活动规则
+.activity-rules{
+  padding-top: px2rem(39);
+  .tit{
+    background:rgba(255,255,255,0.2);
+    border-radius:px2rem(32);
+    width:px2rem(100);
+    height:px2rem(23);
+    display: flex;
+    flex-flow: row;
+    justify-content:center;
+    align-items: center;
+    margin: 0 auto;
+    .txt{
+      font-size:px2rem(14);
+      color:#fff;
+      display: inline-block;
+      margin-right: px2rem(5);
+    }
+    .arrow{
+      width: px2rem(10);
+      height: px2rem(5);
+      background: url(../img/arrow@2x.png) scroll no-repeat center;
+      background-size: 100% auto;
+    }
+  }
+  .subtit{
+    text-align: center;
+    margin-top: px2rem(28);
+    margin-bottom: px2rem(20);
+    font-size: 0;
+    span{
+      background:rgba(255,255,255,0.2);
+      border-radius:px2rem(32);
+      height:px2rem(25);
+      line-height:px2rem(25);
+      font-size:px2rem(14);
+      color:#fff;
+      display: inline-block;
+      padding: 0 px2rem(14);
+      margin: 0;
+    }
+  }
+  .subtit-2{
+    text-align: center;
+    font-size: px2rem(14);
+    color: #fff;
+    margin-top: px2rem(6);
+    margin-bottom: px2rem(6);
+    line-height: 1;
+  }
+  .tip{
+    font-size:px2rem(14);
+    color:#ffffff;
+    text-align:center;
+    padding: 0 px2rem(20);
+    max-height: 100%;
+  }
+  %relation-pic{
+    border-radius:px2rem(10);
+    width:px2rem(278);
+    height:px2rem(205);
+    padding: px2rem(24) px2rem(28) px2rem(26) px2rem(28);
+    margin: 0 auto;
+    margin-top: px2rem(18);
+    margin-bottom: px2rem(15);
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  %incentive-level{
+    border-radius:px2rem(10);
+    width:px2rem(333);
+    padding: px2rem(10) 0;
+    margin: 0 auto;
+    margin-top: px2rem(15);
+    font-size: px2rem(14);
+    color: #fff;
+    max-height: 100%;
+  }
+  .relation-pic-vip{
+    @extend %relation-pic;
+    background: #e56062;
+  }
+  .incentive-level-vip{
+    @extend %incentive-level;
+    background: #e56062;
+    p{
+      padding: 0 px2rem(30);
+    }
+  }
+
+  .relation-pic-bill{
+    @extend %relation-pic;
+    background: #a1c33c;
+  }
+  .incentive-level-bill{
+    @extend %incentive-level;
+    background: #a1c33c;
+    p{
+      padding: 0 px2rem(16);
+    }
+  }
+  .money{
+    background:#e56062;
+    border-radius:px2rem(10);
+    width:px2rem(333);
+    height:px2rem(80);
+    line-height:px2rem(80);
+    color: #fff;
+    font-size: px2rem(36);
+    text-align: center;
+    margin: 0 auto;
+    margin-top: px2rem(11);
+    font-weight: bold;
+  }
+  .formula{
+    font-size:px2rem(10);
+    color:#ffffff;
+    text-align: center;
+    max-height: 100%;
+    margin-top: px2rem(10);
+  }
+  .tip-pic{
+    width: px2rem(330);
+    margin: 0 auto;
+    margin-top: px2rem(35);
+    height: auto;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  .tip2{
+    font-size: px2rem(13);
+    line-height: 1.51;
+    color: #fff;
+    text-align: center;
+    margin: 0 px2rem(20);
+    padding-top: px2rem(35);
+    height: px2rem(63);
+  }
+}
+
+.vip-privilege{
+  padding-top: px2rem(50);
+  .tit{
+    background:rgba(255,255,255,0.2);
+    border-radius:px2rem(32);
+    width:px2rem(130);
+    height:px2rem(23);
+    display: flex;
+    flex-flow: row;
+    justify-content:center;
+    align-items: center;
+    margin: 0 auto;
+    .txt{
+      font-size:px2rem(14);
+      color:#fff;
+      display: inline-block;
+      margin-right: px2rem(5);
+    }
+    .arrow{
+      width: px2rem(10);
+      height: px2rem(5);
+      background: url(../img/arrow@2x.png) scroll no-repeat center;
+      background-size: 100% auto;
+    }
+  }
+
+
+  .privilege-list{
+    padding: 0 px2rem(20);
+    &:after{
+      content: "";
+      display: block;
+      height: 0;
+      overflow: hidden;
+      clear: both;
+    }
+    .item{
+      float: left;
+      width: 25%;
+      %ic{
+        display: block;
+        width: px2rem(35);
+        height: px2rem(35);
+        margin: 0 auto;
+        margin-top: px2rem(32);
+      }
+      .invitation-award{
+        @extend %ic;
+        background: url(../img/privilege-invitation-award.png) scroll no-repeat center;
+        background-size: contain;
+      }
+      .score{
+        @extend %ic;
+        background: url(../img/privilege-score.png) scroll no-repeat center;
+        background-size: contain;
+      }
+      .treasure{
+        @extend %ic;
+        background: url(../img/privilege-treasure.png) scroll no-repeat center;
+        background-size: contain;
+      }
+      .badge{
+        @extend %ic;
+        background: url(../img/privilege-badge.png) scroll no-repeat center;
+        background-size: contain;
+      }
+      .bill{
+        @extend %ic;
+        background: url(../img/privilege-bill.png) scroll no-repeat center;
+        background-size: contain;
+      }
+      .cashing{
+        @extend %ic;
+        background: url(../img/privilege-cashing.png) scroll no-repeat center;
+        background-size: contain;
+      }
+      .rp{
+        @extend %ic;
+        background: url(../img/privilege-rp.png) scroll no-repeat center;
+        background-size: contain;
+      }
+      .specialdeals{
+        @extend %ic;
+        background: url(../img/privilege-specialdeals.png) scroll no-repeat center;
+        background-size: contain;
+      }
+      .task{
+        @extend %ic;
+        background: url(../img/privilege-task.png) scroll no-repeat center;
+        background-size: contain;
+      }
+      .invitation{
+        @extend %ic;
+        background: url(../img/privilege-invitation.png) scroll no-repeat center;
+        background-size: contain;
+      }
+      span{
+        font-size: px2rem(14);
+        color: #fff;
+        display: block;
+        text-align: center;
+        margin-top: px2rem(16);
+      }
+    }
+  }
+  .privilege-compare{
+    padding: 0 px2rem(14);
+    .item{
+      padding-top: px2rem(40);
+      .subtit{
+        font-size:px2rem(18);
+        color:#fff;
+        text-align:center;
+        font-weight: bold;
+      }
+      .compare{
+        margin-top: px2rem(20);
+        background: #fff;
+        position: relative;
+        .top{
+          display: flex;
+          flex-direction: row;
+          background: #fd9e24;
+          .t_t{
+            font-size:px2rem(18);
+            color:#fff;
+            text-align: center;
+            flex: 1 1 auto;
+            line-height: px2rem(39);
+          }
+        }
+        .bott{
+          display: flex;
+          flex-direction: row;
+          .content{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            .ic{
+              width: px2rem(30);
+              height: px2rem(30);
+              display: block;
+              margin: 0 auto;
+              margin-top: px2rem(30);
+            }
+            .desc{
+              padding-top: px2rem(20);
+              padding-bottom: px2rem(40);
+              flex: 1 1 auto;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              p{
+                font-size:px2rem(12);
+                color:#686868;
+                line-height: 1.5;
+              }
+            }
+          }
+          .line{
+            width: 1px;
+            border-left: 1px dashed #fd9e24;
+          }
+        }
+        .pk{
+          width: px2rem(60);
+          height: px2rem(60);
+          background: url(../img/pk.png) scroll no-repeat center;
+          background-size: contain;
+          position: absolute;
+          top: px2rem(8);
+          left: 50%;
+          margin-left: px2rem(-30);
+        }
+      }
+    }
+    .treasure .ic{
+      background: url(../img/compare-treasure.png) scroll no-repeat center;
+      background-size: contain;
+    }
+    .treasure .vip{
+      background: url(../img/compare-treasure-vip.png) scroll no-repeat center;
+      background-size: contain;
+    }
+
+    .bill .ic{
+      background: url(../img/compare-bill.png) scroll no-repeat center;
+      background-size: contain;
+    }
+    .bill .vip{
+      background: url(../img/compare-bill-vip.png) scroll no-repeat center;
+      background-size: contain;
+    }
+
+    .cashing .ic{
+      background: url(../img/compare-cashing.png) scroll no-repeat center;
+      background-size: contain;
+    }
+    .cashing .vip{
+      background: url(../img/compare-cashing-vip.png) scroll no-repeat center;
+      background-size: contain;
+    }
+
+    .rp .ic{
+      background: url(../img/compare-rp.png) scroll no-repeat center;
+      background-size: contain;
+    }
+    .rp .vip{
+      background: url(../img/compare-rp-vip.png) scroll no-repeat center;
+      background-size: contain;
+    }
+
+    .task .ic{
+      background: url(../img/compare-task.png) scroll no-repeat center;
+      background-size: contain;
+    }
+    .task .vip{
+      background: url(../img/compare-task-vip.png) scroll no-repeat center;
+      background-size: contain;
+    }
+
+    .specialdeals .ic{
+      background: url(../img/compare-specialdeals.png) scroll no-repeat center;
+      background-size: contain;
+    }
+    .specialdeals .vip{
+      background: url(../img/compare-specialdeals-vip.png) scroll no-repeat center;
+      background-size: contain;
+    }
+
+    .invitation-award .ic{
+      background: url(../img/compare-award.png) scroll no-repeat center;
+      background-size: contain;
+    }
+    .invitation-award .vip{
+      background: url(../img/compare-award-vip.png) scroll no-repeat center;
+      background-size: contain;
+    }
+  }
+  .tip{
+    margin: 0 px2rem(50);
+    text-align: center;
+    font-size:px2rem(12);
+    line-height: 1.5;
+    color:#ffffff;
+    padding: px2rem(40) 0;
+    max-height: 100%;
+  }
+
+}

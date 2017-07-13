@@ -1,0 +1,178 @@
+body {
+  width: 16rem;
+  margin: 0 auto;
+}
+
+.top-cont {
+  min-height: 100%;
+  margin-bottom: -2.13333rem;
+}
+
+.top-cont .jumbotron {
+  height: 6.82667rem;
+  background-color: #2b333b;
+  position: relative;
+}
+
+.top-cont .jumbotron .coin {
+  width: 4.43733rem;
+  height: 4.992rem;
+  position: absolute;
+  bottom: 0.93867rem;
+  right: 1.792rem;
+  background: url(../img/cashing-rights-bg-vip.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.top-cont .jumbotron .tit {
+  font-size: 1.152rem;
+  padding-top: 2.47467rem;
+  color: #ffffff;
+  text-indent: 0.85333rem;
+  line-height: 1;
+}
+
+.top-cont .jumbotron .tip {
+  font-size: 0.59733rem;
+  color: #ffffff;
+  text-indent: 0.85333rem;
+  margin-top: 0.42667rem;
+  line-height: 1;
+}
+
+.top-cont .name-box {
+  border-bottom: 1px solid #d7d7d7;
+  margin-left: 0.85333rem;
+  padding-top: 1.19467rem;
+  padding-bottom: 0.85333rem;
+}
+
+.top-cont .name-box .tit {
+  font-size: 0;
+  line-height: 1;
+}
+
+.top-cont .name-box .tit .icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.68267rem;
+  height: 0.68267rem;
+  background: url(../img/rights-name-gray@2x.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.top-cont .name-box .tit .txt {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.34133rem;
+  height: 0.68267rem;
+  line-height: 0.68267rem;
+  font-size: 0.68267rem;
+  color: #2b333b;
+}
+
+.top-cont .name-box .name {
+  font-size: 0.55467rem;
+  color: #848689;
+  margin-top: 0.42667rem;
+  line-height: 1;
+  margin-left: 1.024rem;
+  margin-right: 0.768rem;
+  max-height: 100%;
+}
+
+.top-cont .introduce-box {
+  border-bottom: 1px solid #d7d7d7;
+  margin-left: 0.85333rem;
+  padding-top: 1.19467rem;
+  padding-bottom: 0.85333rem;
+}
+
+.top-cont .introduce-box .tit {
+  font-size: 0;
+  line-height: 1;
+}
+
+.top-cont .introduce-box .tit .icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.68267rem;
+  height: 0.68267rem;
+  background: url(../img/rights-introduce-gray@2x.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.top-cont .introduce-box .tit .txt {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.34133rem;
+  height: 0.68267rem;
+  line-height: 0.68267rem;
+  font-size: 0.68267rem;
+  color: #2b333b;
+}
+
+.top-cont .introduce-box .introduce {
+  font-size: 0.55467rem;
+  color: #848689;
+  margin-top: 0.42667rem;
+  line-height: normal;
+  margin-left: 1.024rem;
+  text-align: justify;
+  margin-right: 0.768rem;
+  max-height: 100%;
+}
+
+.top-cont .explain-box {
+  margin-left: 0.85333rem;
+  padding-top: 1.19467rem;
+  padding-bottom: 0.85333rem;
+}
+
+.top-cont .explain-box .tit {
+  font-size: 0;
+  line-height: 1;
+}
+
+.top-cont .explain-box .tit .icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.68267rem;
+  height: 0.68267rem;
+  background: url(../img/rights-explain-gray@2x.png) scroll no-repeat center;
+  background-size: contain;
+}
+
+.top-cont .explain-box .tit .txt {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.34133rem;
+  height: 0.68267rem;
+  line-height: 0.68267rem;
+  font-size: 0.68267rem;
+  color: #2b333b;
+}
+
+.top-cont .explain-box .explain {
+  font-size: 0.55467rem;
+  color: #848689;
+  padding-top: 0.85333rem;
+  padding-bottom: 2.56rem;
+  line-height: 1.4;
+  margin-left: 1.024rem;
+  text-align: justify;
+  margin-right: 0.768rem;
+  max-height: 100%;
+}
+
+.bott-btn {
+  height: 2.13333rem;
+  font-size: 0.768rem;
+  color: #2b333b;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5);
+  line-height: 2.13333rem;
+}
+
+/*# sourceMappingURL=cashing-rights-vip.css.map */

@@ -1,0 +1,8 @@
+##############################
+dist/
+node_modules/
+.idea/
+src/scss/helper/_sprite.scss
+src/css/
+src/.project
+##############################

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+  <!-- <meta name="hotcss" content="initial-dpr=1"> -->
+  <!-- <meta name="hotcss" content="max-width=540"> -->
+  <!-- <meta name="hotcss" content="design-width=750"> -->
+	<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+	<title>特权商品</title>
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/special-price-rights.css">
+	<script src="./js/hotcss.js"></script>
+</head>
+<body>
+  <div class="top-cont">
+    <!-- 巨幕 -->
+    <div class="jumbotron">
+      <div class="coin"></div>
+      <h1 class="tit">特权商品</h1>
+      <p class="tip">更多特权商品让您专享</p>
+    </div>
+
+    <!-- 权益名称 -->
+    <div class="name-box">
+      <div class="tit">
+        <i class="icon"></i><h2 class="txt">权益名称</h2>
+      </div>
+      <div class="name">特权商品</div>
+    </div>
+
+		<!-- 权益介绍 -->
+    <div class="introduce-box">
+      <div class="tit">
+        <i class="icon"></i>
+        <h2 class="txt">权益介绍</h2>
+      </div>
+      <div class="introduce">更多特价优质商品仅限VIP会员超低折扣购买，更多更优的商品只为您服务，让您的权益更有价值。</div>
+    </div>
+		<div class="bott-btn-layer"></div>
+
+  </div>
+  <div class="bott-btn" id="btn">前往商城</div>
+	<script type="text/javascript">
+		document.getElementById('btn').onclick = function(){
+			h5.go("0800");
+		}
+	</script>
+</body>
+</html>

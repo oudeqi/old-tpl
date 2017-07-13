@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <!-- <meta name="hotcss" content="initial-dpr=1"> -->
+        <!-- <meta name="hotcss" content="max-width=540"> -->
+        <!-- <meta name="hotcss" content="design-width=750"> -->
+        <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+        <title>注册2台</title>
+        <link rel="stylesheet" href="./css/base.css">
+        <link rel="stylesheet" href="./css/webreg.css">
+        <script src="./js/hotcss.js"></script>
+        <script src="./js/angular.min.js"></script>
+    </head>
+    <body ng-app="app" ng-controller="reg">
+        <!-- 错误提示 -->
+        <div class="toast" ng-show="msg" ng-click="msg = ''" ng-cloak>
+            <div class="inner">
+                {{msg}}
+            </div>
+        </div>
+        <!-- 注册成功 -->
+        <div class="regSucc" ng-show="regSucc" ng-cloak>
+            <div class="inner">
+                <div class="icon"></div>
+                <div class="tit">注册成功</div>
+                <div class="tip-1">
+                    <p>恭喜您由【{{inviteName}}】推荐</p>
+                    <p>成为第<span>{{userCount}}</span>位2台用户</p>
+                </div>
+                <button type="button" name="button" ng-click="downloadApp()">立即下载</button>
+            </div>
+        </div>
+
+        <!-- 内容 -->
+        <div class="warpper" ng-cloak>
+            <div class="top-cont">
+                <!-- 巨幕 -->
+                <div class="jumbotron">
+					<div class="logo-box">
+						<!-- <div class="logo"></div> -->
+						<!-- <div class="youdu"></div> -->
+					</div>
+                    <div class="pic-bg"></div>
+                    <div class="tip">
+						享品味生活 | 读快讯美文 | 抢企业红包
+					</div>
+                </div>
+                <div class="tel">
+                    <input type="tel" ng-model="tel" placeholder="输入手机号码">
+                </div>
+                <div class="v-code">
+                    <input type="text" ng-model="vcode" placeholder="输入验证码">
+                    <div class="btn-box">
+                        <button type="button" name="button" ng-disabled="codeBtnClicked" ng-click="sendCode()">{{codeBtnTxt}}</button>
+                        <!-- 获取验证码 countDown sendCode -->
+                    </div>
+                </div>
+                <div class="pwd">
+                    <input type="text" ng-show="eyeOpen" ng-model="pwd" placeholder="设置登陆密码">
+                    <input type="password" ng-show="!eyeOpen" ng-model="pwd" placeholder="设置登陆密码">
+                    <button class="eye" ng-class="{'eye-open':eyeOpen}" type="button" name="button" ng-click="eyeSwitch()"></button>
+                </div>
+				<div class="agreement">
+					注册表示您已同意 <a href="javascripot:void(0);">《2台用户服务协议》</a>
+				</div>
+            </div>
+
+            <div class="bott-cont">
+                <button type="button" name="button" ng-click="webReg()">立即注册</button>
+            </div>
+            <div class="bott-cont2">
+             <!-- ng-show="regSucc" -->
+                <button type="button" name="button" ng-click="downloadApp()">已有账号</button>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var app = angular.module('app', []);
+            app.constant('host', 'https://api.2tai.com/');
+            app.config([
+                '$locationProvider',
+                function($locationProvider) {
+                    $locationProvider.html5Mode({enabled: true, requireBase: false});
+                }
+            ]);
+            app.controller('reg', [
+                '$scope',
+                'host',
+                '$timeout',
+                '$interval',
+                '$http',
+                '$location',
+                function($scope, host, $timeout, $interval, $http, $location) {
+
+                    if ($location.search().comeinCode) {
+                        $scope.comeinCode = $location.search().comeinCode;
+                    } else {
+                        $scope.comeinCode = "";
+                    }
+
+                    if ($location.search().rpOpenid) {
+                        $scope.rpOpenid = $location.search().rpOpenid;
+                    } else {
+                        $scope.rpOpenid = "";
+                    }
+
+                    $scope.tel = '';
+                    $scope.vcode = '';
+                    $scope.pwd = '';
+
+                    // 注册是否成功
+                    $scope.regSucc = false;
+
+                    var reg = /^1\d{10}$/;
+                    $scope.eyeOpen = false;
+                    $scope.eyeSwitch = function() {
+                        $scope.eyeOpen = !$scope.eyeOpen;
+                    }
+
+                    // 去下载app
+                    $scope.downloadApp = function() {
+                        window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.union.ertai";
+                    }
+
+                    var counter = 60;
+                    $scope.codeBtnTxt = '发送验证码';
+                    $scope.codeBtnClicked = false;
+
+                    $scope.countDown = function() {
+                        $scope.codeBtnTxt = counter + '秒重新发送';
+                        var timer = $interval(function() {
+                            if (counter > 0) {
+                                counter--;
+                                $scope.codeBtnTxt = counter + '秒重新发送';
+                            } else {
+                                $interval.cancel(timer);
+                                $scope.codeBtnClicked = false;
+                                counter = 60;
+                                $scope.codeBtnTxt = '发送验证码';
+                            }
+                        }, 1000);
+                    }
+
+                    $scope.sendCode = function() {
+                        if ($scope.tel == '') {
+                            $scope.msg = '手机号码不能为空';
+                            $timeout(function() {
+                                $scope.msg = '';
+                            }, 1500);
+                            return;
+                        }
+                        if ($scope.tel.match(reg)) {
+                            /*
+					判断手机号是否正确： /v1/user/check POST
+					{
+					"phoneNumber":"13547822066"
+					}
+					返回0 表示通过，1已结注册
+					*/
+                            $scope.codeBtnClicked = true; //不能点击
+                            $http.post(host + '/v1/user/check', {phoneNumber: $scope.tel}).success(function(data) {
+                                console.log(data);
+                                if (data.data == 1) {
+                                    $scope.msg = '该手机号码已被注册';
+                                    $timeout(function() {
+                                        $scope.msg = '';
+                                    }, 1500);
+                                    $scope.codeBtnClicked = false; //能点击
+                                } else {
+                                    // 手机号未被注册 --发送验证码
+                                    $http.post(host + '/v1/msg/sendVerifyCode', {phone: $scope.tel}).success(function(data) {
+                                        console.log(data);
+                                        if (data.data) {
+                                            $scope.countDown(); //倒计时
+                                        } else { //验证码发送失败
+                                            $scope.codeBtnClicked = false; //能点击
+                                            $scope.msg = data.errMessage;
+                                            $timeout(function() {
+                                                $scope.msg = '';
+                                            }, 1500);
+                                        }
+                                    }).error(function() {
+                                        $scope.codeBtnClicked = false; //能点击
+                                    });
+                                }
+                            }).error(function(data) {
+                                $scope.codeBtnClicked = false; //能点击
+                            });
+                        } else { //手机号码格式错误
+                            $scope.msg = '手机号码格式错误';
+                            $timeout(function() {
+                                $scope.msg = '';
+                            }, 1500);
+                        }
+                    }
+
+                    $scope.webReg = function() {
+                        /*
+				$scope.tel = '';
+				$scope.vcode = '';
+				$scope.pwd = '';
+				*/
+                        if ($scope.tel == '') {
+                            $scope.msg = '手机号码不能为空';
+                            $timeout(function() {
+                                $scope.msg = '';
+                            }, 1500);
+                            return;
+                        }
+                        if (!$scope.tel.match(reg)) {
+                            $scope.msg = '手机号码格式错误';
+                            $timeout(function() {
+                                $scope.msg = '';
+                            }, 1500);
+                            return;
+                        }
+                        if ($scope.vcode == '') {
+                            $scope.msg = '请填写手机验证码';
+                            $timeout(function() {
+                                $scope.msg = '';
+                            }, 1500);
+                            return;
+                        }
+                        if ($scope.pwd.length < 6 || $scope.pwd.length > 20) {
+                            $scope.msg = '密码长度为 6-20 位';
+                            $timeout(function() {
+                                $scope.msg = '';
+                            }, 1500);
+                            return;
+                        }
+                        /*
+				验证短信验证码：/v1/msg/verifyMsg  POST
+				{
+				"phone":"13547822066",
+				"code":"1234"
+				}
+				*/
+                        $http.post(host + '/v1/msg/verifyMsg', {
+                            phone: $scope.tel,
+                            code: $scope.vcode
+                        }).success(function(data) {
+                            console.log(data);
+                            if (data.data) { //验证成功
+                                /*
+						注册：/v1/user/register  POST
+						参数:
+						{
+						"phoneNumber":"13547822066",
+						"password":"123456",
+						}
+						*/
+                                $http.post(host + '/v1/user/register', {
+                                    phoneNumber: $scope.tel,
+                                    password: $scope.pwd,
+                                    comeinCode: $scope.comeinCode,
+                                    wxUserInfo:{
+                                        rpOpenid:$scope.rpOpenid
+                                    }
+                                }).success(function(data) {
+                                    if (data.errMessage) {
+                                        $scope.msg = data.errMessage;
+                                        $timeout(function() {
+                                            $scope.msg = '';
+                                        }, 1500);
+                                    } else {
+                                        //注册成功
+                                        $scope.msg = '';
+                                        $scope.regSucc = true;
+                                        $scope.token = data.data.token;
+                                        $http.get(host + "/v1/aut/download/barcode", {
+                                            headers: {
+                                                'Authorization': $scope.token,
+                                                'Content-Type': 'application/json;charset=utf-8'
+                                            }
+                                        }).success(function(data) {
+                                            $scope.userCount = data.data.userCount;
+                                            $scope.inviteName = data.data.inviteName;
+                                        });
+                                    }
+                                });
+                            } else {
+                                //未发送过验证码的号码，提示 请验证手机号码
+                                $scope.msg = "验证码错误";
+                                $timeout(function() {
+                                    $scope.msg = '';
+                                }, 1500);
+                            }
+                        });
+                    }
+
+                }
+            ]);
+        </script>
+    </body>
+</html>

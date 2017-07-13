@@ -1,0 +1,313 @@
+@charset "utf-8";
+
+/*base*/
+*{
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+	-ms-touch-action: none;
+	font-size: 16px;
+}
+body {
+	height: 100%;
+	line-height: normal;
+	color: #000;
+	background: #fff;
+	font-family: Helvetica sans-serif;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+a,
+button,
+input,
+textarea,
+select {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-appearance: none;
+	appearance: none;
+	font-size: 100%;
+	outline: 0;
+}
+input::-webkit-input-placeholder {
+	color: #aaa;
+}
+input:focus::-webkit-input-placeholder {
+	color: #eee;
+}
+input[type=radio]::-ms-check,
+input[type=checkbox]::-ms-check,
+input[type=text]::-ms-clear,
+input[type=tel]::-ms-clear,
+input[type=number]::-ms-clear,
+input::-webkit-input-speech-button,
+select::-ms-expand {
+	display: none
+}
+.hide {
+	display: none !important;
+}
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	overflow: hidden;
+	clear: both;
+}
+.red{
+	color: red;
+}
+/*protocol*/
+#protocol{
+	font-size: 13px;
+	text-align: justify;
+}
+#protocol .container{
+	padding: 0 0.9375em;
+}
+#protocol .container .tit{
+	text-align: center;
+	font-size: 1.375em;
+	color: #333;
+}
+#protocol .container .subtit{
+	text-align: left;
+	font-size: 1em;
+	color: #333;
+	padding: 0.9375em 0;
+}
+#protocol .container .summarize{
+	padding: 1em 0;
+	color: #686868;
+}
+#protocol .container .p{
+	line-height: 1.5;
+	font-size: 1em;
+	padding-bottom: 0.5em;
+	color: #686868;
+	text-align: justify;
+}
+#protocol .container .t-indent{
+	text-indent: 1.5em;
+	font-size: 1em;
+	padding-bottom: 0.5em;
+	color: #686868;
+}
+
+/*calculation-rules*/
+#calculation-rules{
+	font-size: 13px;
+}
+#calculation-rules .jumbotron{
+	background-color: #F15352;
+	color: #fff;
+	padding: 1em .5em;
+}
+#calculation-rules .jumbotron p{
+	font-size: 0.9375em;
+}
+#calculation-rules .jumbotron p:first-child{
+	font-size: 1.125em;
+	line-height: 1.6;
+}
+#calculation-rules .row{
+	border-bottom: 1px solid #D7D7D7;
+	padding: .8125em .5em 2.3em .5em;
+	font-size: 0.875em;
+}
+#calculation-rules .explain{
+	padding: 0 .5em;
+	padding-bottom: .5em;
+}
+#calculation-rules .explain .tit{
+	padding: 1em 0;
+	padding-top: 1.25em;
+	font-size: 1em;
+	color: #333;
+}
+#calculation-rules .explain .content{
+	color: #686868;
+	font-size: .875em;
+	text-align: justify;
+}
+#calculation-rules .explain .content .p{
+	margin-bottom: .875em;
+	line-height: 1.5;
+}
+#calculation-rules .luckyno{
+	padding: 1em 0;
+	text-align: center;
+	color: #F15352;
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
+#calculation-rules .value-ab{
+	padding: .875em .625em;
+	border-bottom: 1px solid #D7D7D7;
+}
+#calculation-rules .value-ab .top{
+	font-size: 0.875em;
+	margin-bottom: .625em;
+	color: #333;
+}
+#calculation-rules .value-ab .bott{
+	color: #F15352;
+	font-size: .9375em;
+}
+#calculation-rules .value-ab .bott .l{
+	float: left;
+}
+#calculation-rules .value-ab .bott .r{
+	float: right;
+}
+#calculation-rules .value-ab .bott .r span{
+	display: inline-block;
+	vertical-align: middle;
+}
+#calculation-rules .value-ab .bott .r .ic{
+	display: inline-block;
+	vertical-align: middle;
+	width: 1em;
+	height: 1em;
+	margin-left: .3em;
+}
+#calculation-rules .value-ab .bott .r .arrows-b{
+	background: url(./arrows.png) no-repeat scroll top left;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+#calculation-rules .value-ab .bott .r .arrows-t{
+	background: url(./arrows.png) no-repeat scroll bottom left;
+	background-size: cover;
+	-webkit-background-size: cover;
+}
+#calculation-rules .value-ab .bott a{
+	color: #F15352;
+	text-decoration: none;
+}
+#calculation-rules .value-ab .bott>span:last-child{
+	color: #333;
+}
+#calculation-rules .value-a-detail{
+	padding: 0 .625em;
+	border-bottom: 1px solid #D7D7D7;
+}
+#calculation-rules .value-a-detail table{
+	width: 100%;
+	font-size: .8135em;
+}
+
+#calculation-rules .value-a-detail table thead th{
+	padding: .5em 0;
+	color: #686868;
+}
+#calculation-rules .value-a-detail table thead th:nth-child(1){
+	text-align: left;
+}
+#calculation-rules .value-a-detail table thead th:nth-child(2){
+	text-align: center;
+}
+#calculation-rules .value-a-detail table thead th:nth-child(3){
+	text-align: right;
+}
+#calculation-rules .value-a-detail table tbody td{
+	line-height: 1.5;
+}
+#calculation-rules .value-a-detail table tbody td:nth-child(1){
+	text-align: left;
+	color: #686868;
+}
+#calculation-rules .value-a-detail table tbody td:nth-child(2){
+	text-align: center;
+	color: #F15352;
+}
+#calculation-rules .value-a-detail table tbody td:nth-child(3){
+	text-align: right;
+	color: #F15352;
+}
+
+/*help-center*/
+#help-center{
+	font-size: 13px;
+	text-align: justify;
+}
+#help-center .tab-head{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
+}
+#help-center .tab-head .tab-nav{
+	width: 25%;
+	float: left;
+	border-bottom: 1px solid #aeaeae;
+}
+#help-center .tab-nav a{
+	font-size: .9375em;
+	text-align: center;
+	display: block;
+	padding: 1em 0;
+	text-decoration: none;
+	color: #686868;
+	border-bottom: 2px solid #fff;
+}
+#help-center .tab-nav.active{
+	border-color: #F15352;
+}
+#help-center .tab-nav.active a{
+	border-color: #F15352;
+}
+#help-center .tab-content{
+	padding: .5em;
+	padding-top: 3.625em;
+}
+#help-center .tab-content .tit{
+	text-align: center;
+	font-size: 1.375em;
+	color: #333;
+	padding-top: .5em;
+}
+#help-center .tab-content .summarize{
+	padding: 1em 0;
+	color: #686868;
+}
+#help-center .tab-content .subtit{
+	text-align: left;
+    font-size: 1em;
+    color: #333;
+    padding: 0.9375em 0;
+}
+#help-center .tab-content .p{
+	font-size: 1em;
+    padding-bottom: 0.9375em;
+    color: #686868;
+}
+#help-center .tab-content .t-indent{
+	text-indent: 1.5em;
+	font-size: 1em;
+	padding-bottom: 0.5em;
+	color: #686868;
+}
+@media screen and (min-width:360px){
+	#protocol,
+	#calculation-rules,
+	#help-center{
+		font-size: 15px;
+	}
+}
+@media screen and (min-width:375px){
+	#protocol,
+	#calculation-rules,
+	#help-center{
+		font-size: 16px;
+	}
+}

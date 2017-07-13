@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="treasure.css"/>
+    <style type="text/css">
+	    .hide{
+	    	display: none;
+	    }
+    </style>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript">
+    	var app = angular.module('app',[]);
+    	app.config(['$locationProvider', function($locationProvider){
+  			$locationProvider.html5Mode({
+  				enabled: true,
+  				requireBase: false
+  			});
+  		}]);
+
+    	app.constant('host','https://api.uoolle.com/');
+      app.filter('hideName',function(){
+        return function(str){
+          var str = str.replace(/(^\s*)|(\s*$)/g, "");
+          var newStr;
+          if(str.length == 0){
+            newStr = '*****';
+          }else if( str.length == 1){
+            newStr = '****' + str;
+          }else if(str.length == 2){
+            newStr = str.substr(0,1) + '***' + str.charAt(str.length - 1);
+          }else if(str.length == 3){
+            newStr = str.substr(0,2) + '**' + str.charAt(str.length - 1);
+          }else if(str.length == 4){
+            newStr = str.substr(0,2) + '**' + str.charAt(str.length - 1);
+          }else if(str.length == 5){
+            newStr = str.substr(0,2) + '**' + str.charAt(str.length - 1);
+          }else{
+            newStr = str.substr(0,3) + '*' + str.charAt(str.length - 1);
+          }
+          return newStr;
+        }
+      });
+    	app.controller('appCtr',['$scope','$location','$http','host',function($scope,$location,$http,host){
+    		$scope.hide = "hide";
+    		/*
+    			http://fx.uoolle.cn/youle/treasure_tpl/calculation-rules.html?id=31&stage=1
+    			http://tpl.uoolle.cn/calculation-rules.html?id=31&stage=1
+				/v1/aut/lucky/rule?id=31&stage=1   中奖规则获取的数据
+				//https://api.uoolle.com/v1/lucky/rule?id=19&stage=1
+    		*/
+    		$scope.zk = false;
+    		$scope.vbShow = false;
+    		var id = $location.search().id;
+    		var stage = $location.search().stage;
+    		$scope.hasArg = $location.search().id && $location.search().stage;
+    		if($scope.hasArg){
+    			$http.get(host+"/v1/lucky/rule",{
+    				params:{
+    					id:id,
+    					stage:stage
+    				}
+    			}).success(function(data){
+    				console.log(data);
+    				if(data.data){
+    					$scope.vbShow = true;
+			            if(!data.data.valueB){
+			                data.data.gemNo = "待揭晓"
+			            }
+			            $scope.data = data.data;
+    				}else{
+    					$scope.hasArg = false;
+    				}
+    				$scope.hide = " ";
+    			}).error(function(data){
+    				console.error(data);
+    				$scope.hasArg = false;
+    			});
+    		}else{
+    			$scope.hide = " ";
+    		}
+    	}]);
+    </script>
+</head>
+<body id="calculation-rules" ng-app="app" ng-controller="appCtr">
+	<div class="container" ng-if="!hasArg" ng-class="hide">
+		<div class="jumbotron">
+			<p>揭晓公式</p>
+      <p>(数值A/数值B)取余数+1000001</p>
+		</div>
+		<div class="row">
+			<b>数值A</b>
+      <span> = 该商品最后一个抢宝号码分配完毕时间点前，夺宝平台全站最后50个参与时间相加求和
+</span>
+		</div>
+		<div class="row">
+			<b>数值B</b>
+      <span> = 商品所需次数</span>
+		</div>
+		<div class="explain">
+			<h2 class="tit">幸运号码计算规则说明</h2>
+			<div class="content">
+				<p class="p">
+				1. 每个商品都有总参与人次的最低要求，参与该商品抽奖的人次达到最低人次要求的5分钟后开奖；
+				</p>
+				<p class="p">
+				2. 商品的最后一个号码分配完毕后，将公示该分配时间点前本站全部商品的最后50个参与时间；
+				</p>
+				<p class="p">
+				3. 将这50个时间的数值进行求和，得出数值A（每个时间按时、分、秒、毫秒的顺序组合，如20:15:25.362则为201525362），若时间为20:13:14.002则数值为20131402），为了防止用户批量进行毫秒级下单，毫秒百位为0，自动舍去，数字将从9位，修改成8位进行求和计算；
+				</p>
+				<p class="p">
+				4. 总需参与人次数为数值B；
+				</p>
+        <p class="p">
+        5. 数值A除以数值B得到的余数 + 原始数 10000001，得到最终幸运号码，拥有该幸运号码者，直接获得该商品。
+        </p>
+				<p class="p">
+				注：余数是指整数除法中被除数未被除尽部分，如10÷3=3……1,1就是余数。
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container" ng-if="hasArg" ng-class="hide">
+		<div class="luckyno">本期幸运号码：{{data.gemNo}}</div>
+		<div class="jumbotron">
+			<p>揭晓公式</p>
+      <p>(数值A/数值B)取余数+1000001</p>
+		</div>
+		<div class="value-ab">
+			<div class="top">
+				<b>数值A</b>
+        <span> = 该商品最后一个抢宝号码分配完毕时间点前，夺宝平台全站最后50个参与时间相加求和
+</span>
+			</div>
+			<div class="bott clearfix">
+				<div class="l">本期数值A = {{data.valueA}}</div>
+				<div class="r">
+					<a href="" ng-show="zk" ng-click="zk=!zk"><span>收起详情</span><i class="ic arrows-t"></i></a>
+					<a href="" ng-show="!zk" ng-click="zk=!zk"><span>展开详情</span><i class="ic arrows-b"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="value-a-detail" ng-show="zk">
+			<table>
+				<thead>
+					<tr>
+						<th>参与时间</th><th>号码</th><th>用户名</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in data.valueAList">
+						<td>{{item.createDate | date : "yyyy-MM-dd HH:mm:ss.sss"}}</td>
+						<td>{{item.value}}</td>
+						<td>{{item.nickName | hideName}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="value-ab" ng-show="vbShow">
+			<div class="top">
+				<b>数值B</b>
+				<span> = 商品所需次数</span>
+			</div>
+			<div class="bott clearfix">
+				<div class="l">本期数值B = {{data.valueB}}</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
